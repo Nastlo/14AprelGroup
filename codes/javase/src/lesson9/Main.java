@@ -2,104 +2,148 @@ package lesson9;
 
 public class Main {
     public static void main(String[] args) {
-
-        // ===============================
-        //     DƏRS PRAKTİKASI 1
-        // ===============================
-        int book1Id = 1;
-        String book1Name = "Java Kitabı";
-        String book1Author = "Ali";
-        int book1PageCount = 200;
-        String book1Description = "Yeni başlayanlar üçün";
-
-        int book2Id = 2;
-        String book2Name = "OOP Kitabı";
-        String book2Author = "Veli";
-        int book2PageCount = 300;
-        String book2Description = "Obyekt yönümlü proqramlama";
-
-        System.out.println("Book 1: " + book1Id + " " + book1Name + " " + book1Author);
-        System.out.println("Book 2: " + book2Id + " " + book2Name + " " + book2Author);
-
-
-        // ===============================
-        //     DƏRS PRAKTİKASI 2
-        // ===============================
-        int comp1Id = 1;
-        String comp1Brand = "Unknown";
-        String comp1Model = "Unknown";
-        String comp1Color = "Black";
-
-        int comp2Id = 2;
-        String comp2Brand = "HP";
-        String comp2Model = "Unknown";
-        String comp2Color = "Black";
-
-        int comp3Id = 3;
-        String comp3Brand = "ASUS";
-        String comp3Model = "ROG";
-        String comp3Color = "Red";
-
-        System.out.println("Computer 1: " + comp1Id + " " + comp1Brand);
-        System.out.println("Computer 2: " + comp2Id + " " + comp2Brand);
-        System.out.println("Computer 3: " + comp3Id + " " + comp3Brand + " " + comp3Model);
-
-
-        // ===============================
-        //         EV İŞİ 1
-        // ===============================
-        int person1Id = 1;
-        String person1Name = "Ramin";
-        String person1Surname = "Aliyev";
-        int person1Age = 20;
-        String person1Phone = "0501112233";
-
-        int person2Id = 2;
-        String person2Name = "Nigar";
-        String person2Surname = "Quliyeva";
-        int person2Age = 22;
-        String person2Phone = "050889977";
-
-        System.out.println("Person 1: " + person1Name + " " + person1Surname);
-        System.out.println("Person 2: " + person2Name + " " + person2Surname);
-
-
-        // ===============================
-        //         EV İŞİ 2
-        // ===============================
-
-        // Employee 1 (default)
-        int emp1Id = 0;
-        String emp1Name = "Unknown";
-        String emp1Surname = "Unknown";
-        String emp1Phone = "0000000";
-        String emp1Address = "No Address";
-        int emp1Salary = 0;
-
-        // Employee 2 (name)
-        String emp2Name = "Aylin";
-        String emp2Surname = "Unknown";
-        String emp2Phone = "0000000";
-        String emp2Address = "No Address";
-        int emp2Salary = 0;
-
-        // Employee 3 (name, surname, phone)
-        String emp3Name = "Emin";
-        String emp3Surname = "Kerimov";
-        String emp3Phone = "0512223344";
-        String emp3Address = "No Address";
-        int emp3Salary = 0;
-
-        // Employee 4 (name, phone, salary)
-        String emp4Name = "Nurlan";
-        String emp4Surname = "Unknown";
-        String emp4Phone = "0513332211";
-        String emp4Address = "No Address";
-        int emp4Salary = 1200;
-
-        System.out.println("Employee 1: " + emp1Name);
-        System.out.println("Employee 2: " + emp2Name);
-        System.out.println("Employee 3: " + emp3Name + " " + emp3Surname);
-        System.out.println("Employee 4: " + emp4Name + " salary=" + emp4Salary);
+        System.out.println("========== EV ISI-1: PERSON ==========\n");
+        
+        Classes person1 = new Classes();
+        Classes person2 = new Classes();
+        
+        person1.id = 1;
+        person1.name = "Aysel";
+        person1.surname = "Mammadova";
+        person1.age = 25;
+        person1.phone = "+994501234567";
+        
+        person2.id = 2;
+        person2.name = "Elnur";
+        person2.surname = "Huseynov";
+        person2.age = 30;
+        person2.phone = "+994557654321";
+        
+        System.out.println("=== Birinci Shexs ===");
+        System.out.println("ID: " + person1.id);
+        System.out.println("Ad: " + person1.name);
+        System.out.println("Soyad: " + person1.surname);
+        System.out.println("Yash: " + person1.age);
+        System.out.println("Telefon: " + person1.phone);
+        
+        System.out.println();
+        
+        System.out.println("=== Ikinci Shexs ===");
+        System.out.println("ID: " + person2.id);
+        System.out.println("Ad: " + person2.name);
+        System.out.println("Soyad: " + person2.surname);
+        System.out.println("Yash: " + person2.age);
+        System.out.println("Telefon: " + person2.phone);
+        
+        System.out.println("\n========== EV ISI-2: EMPLOYEE ==========\n");
+        
+        Employee emp1 = new Employee();
+        Employee emp2 = new Employee("Leyla", "Aliyeva");
+        Employee emp3 = new Employee("Kamran", "Hasanov", "Baki, Nasimi");
+        Employee emp4 = new Employee("Nigar", "+994502223344", 2500);
+        
+        emp1.id = 1;
+        emp1.name = "Murad";
+        emp1.surname = "Ismayilov";
+        emp1.phone = "+994501112233";
+        emp1.address = "Baki, Yasamal";
+        emp1.salary = 3000;
+        
+        System.out.println("=== Employee 1 (default constructor) ===");
+        System.out.println("ID: " + emp1.id);
+        System.out.println("Ad: " + emp1.name);
+        System.out.println("Soyad: " + emp1.surname);
+        System.out.println("Telefon: " + emp1.phone);
+        System.out.println("Unvan: " + emp1.address);
+        System.out.println("Maas: " + emp1.salary);
+        
+        System.out.println();
+        
+        System.out.println("=== Employee 2 (name, surname) ===");
+        System.out.println("Ad: " + emp2.name);
+        System.out.println("Soyad: " + emp2.surname);
+        
+        System.out.println();
+        
+        System.out.println("=== Employee 3 (name, surname, address) ===");
+        System.out.println("Ad: " + emp3.name);
+        System.out.println("Soyad: " + emp3.surname);
+        System.out.println("Unvan: " + emp3.address);
+        
+        System.out.println();
+        
+        System.out.println("=== Employee 4 (name, phone, salary) ===");
+        System.out.println("Ad: " + emp4.name);
+        System.out.println("Telefon: " + emp4.phone);
+        System.out.println("Maas: " + emp4.salary);
+        
+        System.out.println("\n========== DERS PRAKTIKASI-1: BOOK ==========\n");
+        
+        Book book1 = new Book();
+        Book book2 = new Book();
+        
+        book1.id = 1;
+        book1.name = "Koroglu";
+        book1.author = "Xalq yaradiciligi";
+        book1.pageCount = 250;
+        book1.description = "Azərbaycan xalq dastani";
+        
+        book2.id = 2;
+        book2.name = "Arxayın olun, burada olacagam";
+        book2.author = "Cingiz Abdullayev";
+        book2.pageCount = 320;
+        book2.description = "Detektiv roman";
+        
+        System.out.println("=== Birinci Kitab ===");
+        System.out.println("ID: " + book1.id);
+        System.out.println("Ad: " + book1.name);
+        System.out.println("Muellif: " + book1.author);
+        System.out.println("Sehife sayi: " + book1.pageCount);
+        System.out.println("Tesvir: " + book1.description);
+        
+        System.out.println();
+        
+        System.out.println("=== Ikinci Kitab ===");
+        System.out.println("ID: " + book2.id);
+        System.out.println("Ad: " + book2.name);
+        System.out.println("Muellif: " + book2.author);
+        System.out.println("Sehife sayi: " + book2.pageCount);
+        System.out.println("Tesvir: " + book2.description);
+        
+        System.out.println("\n========== DERS PRAKTIKASI-2: COMPUTER ==========\n");
+        
+        Computer comp1 = new Computer();
+        Computer comp2 = new Computer(101);
+        Computer comp3 = new Computer("MacBook Pro", "Apple");
+        Computer comp4 = new Computer("ThinkPad X1", "Qara", "Lenovo");
+        
+        comp1.id = 1;
+        comp1.brand = "HP";
+        comp1.model = "Pavilion";
+        comp1.color = "Gumushu";
+        
+        System.out.println("=== Computer 1 (default constructor) ===");
+        System.out.println("ID: " + comp1.id);
+        System.out.println("Marka: " + comp1.brand);
+        System.out.println("Model: " + comp1.model);
+        System.out.println("Reng: " + comp1.color);
+        
+        System.out.println();
+        
+        System.out.println("=== Computer 2 (id) ===");
+        System.out.println("ID: " + comp2.id);
+        
+        System.out.println();
+        
+        System.out.println("=== Computer 3 (model, brand) ===");
+        System.out.println("Model: " + comp3.model);
+        System.out.println("Marka: " + comp3.brand);
+        
+        System.out.println();
+        
+        System.out.println("=== Computer 4 (model, color, brand) ===");
+        System.out.println("Model: " + comp4.model);
+        System.out.println("Reng: " + comp4.color);
+        System.out.println("Marka: " + comp4.brand);
     }
 }
