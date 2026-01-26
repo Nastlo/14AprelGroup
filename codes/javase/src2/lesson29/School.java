@@ -14,8 +14,8 @@ public class School {
 
     public static void main(String[] args) {
         Student s1 = new Student();
-        s1.name = "Ali";
-        s1.grade = 10;
+        s1.name = "Omar";
+        s1.grade = 13;
         s1.showInfo();
     }
 }
