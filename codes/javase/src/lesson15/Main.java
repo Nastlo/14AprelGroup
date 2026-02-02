@@ -26,7 +26,7 @@ public class Main {
         System.out.println(message.startsWith("Java"));
 
         name = " Ayxan ";
-
+ 
         System.out.println(name.trim());
 
         name = "Kamil";
