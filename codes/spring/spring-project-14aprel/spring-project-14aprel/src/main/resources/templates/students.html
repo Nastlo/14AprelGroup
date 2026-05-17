@@ -1,17 +1,27 @@
 <html>
+
 <head>
-    <title>Students</title>
+	<title>Tapsırıq</title>
 </head>
+
 <body>
 
-    <h1>Student List</h1>
 
-    <ol>
-        <li>Ali</li>
-        <li>Veli</li>
-        <li>Murad</li>
-        <li>Aysel</li>
-    </ol>
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Grade</th>
+        </tr>
+
+        <tr th:each="s : ${students}">
+            <td th:text="${s.name}"></td>
+            <td th:text="${s.surname}"></td>
+            <td th:text="${s.grade}"></td>
+        </tr>
+
+    </table>
 
 </body>
 </html>
