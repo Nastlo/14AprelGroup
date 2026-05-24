@@ -39,6 +39,11 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+        	<groupId>az.developia</groupId>
+        	<artifactId>project</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
