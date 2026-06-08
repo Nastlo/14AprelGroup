@@ -1,25 +1,43 @@
-2026-05-24 12:35:30.040 INFO  a.d.s.SpringProject14aprelApplication - Starting SpringProject14aprelApplication using Java 21.0.9 with PID 23504 (C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel\target\classes started by -Nastlo in C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel)
-2026-05-24 12:35:30.043 DEBUG a.d.s.SpringProject14aprelApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
-2026-05-24 12:35:30.044 INFO  a.d.s.SpringProject14aprelApplication - No active profile set, falling back to 1 default profile: "default"
-2026-05-24 12:35:30.607 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-05-24 12:35:30.615 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-05-24 12:35:30.618 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-05-24 12:35:30.618 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
-2026-05-24 12:35:30.656 INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 569 ms
-2026-05-24 12:35:30.968 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-05-24 12:35:30.990 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-05-24 12:35:30.995 INFO  a.d.s.SpringProject14aprelApplication - Started SpringProject14aprelApplication in 1.451 seconds (process running for 1.755)
-2026-05-24 12:35:49.246 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-05-24 12:35:49.246 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-05-24 12:35:49.251 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
-2026-05-24 12:35:54.576 INFO  a.d.s.config.AppConfig - api işe düşdü
-2026-05-24 12:37:18.115 INFO  a.d.s.config.AppConfig - api işe düşdü
-2026-05-24 12:37:18.239 INFO  a.d.s.config.AppConfig - api işe düşdü
-2026-05-24 12:37:18.772 INFO  a.d.s.config.AppConfig - api işe düşdü
+2026-06-08 16:46:52.682 INFO  a.d.s.SpringProject14aprelApplication - Starting SpringProject14aprelApplication using Java 21.0.9 with PID 19972 (C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel\target\classes started by -Nastlo in C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel)
+2026-06-08 16:46:52.693 DEBUG a.d.s.SpringProject14aprelApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-08 16:46:52.694 INFO  a.d.s.SpringProject14aprelApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 16:46:53.771 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-08 16:46:53.796 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-08 16:46:53.799 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-08 16:46:53.799 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 16:46:53.860 INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1080 ms
+2026-06-08 16:46:54.330 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-08 16:46:54.364 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-08 16:46:54.369 INFO  a.d.s.SpringProject14aprelApplication - Started SpringProject14aprelApplication in 2.323 seconds (process running for 2.776)
+2026-06-08 16:46:58.431 INFO  a.d.s.SpringProject14aprelApplication - Starting SpringProject14aprelApplication using Java 21.0.9 with PID 30112 (C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel\target\classes started by -Nastlo in C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel)
+2026-06-08 16:46:58.434 DEBUG a.d.s.SpringProject14aprelApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-08 16:46:58.436 INFO  a.d.s.SpringProject14aprelApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-08 16:46:59.407 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-08 16:46:59.428 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-08 16:46:59.430 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-08 16:46:59.431 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-08 16:46:59.477 INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 976 ms
+2026-06-08 16:46:59.932 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-08 16:46:59.946 WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-06-08 16:46:59.961 INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
 
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-08 16:46:59.975 ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
 
+***************************
+APPLICATION FAILED TO START
+***************************
 
+Description:
 
+Web server failed to start. Port 8080 was already in use.
 
+Action:
 
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
 
+2026-06-08 16:47:12.331 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-08 16:47:12.332 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-08 16:47:12.333 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-06-08 16:47:40.804 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'brand' for method parameter type String is not present]
+2026-06-08 16:48:29.663 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'brand' for method parameter type String is not present]
