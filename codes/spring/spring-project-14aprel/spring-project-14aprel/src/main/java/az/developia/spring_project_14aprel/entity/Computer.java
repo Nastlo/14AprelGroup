@@ -12,9 +12,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Computer {
-	
-	private Integer id;
-	private String brand;
-	private String model;
 
+    private Integer id;
+    private String brand;
+    private String model;
 }

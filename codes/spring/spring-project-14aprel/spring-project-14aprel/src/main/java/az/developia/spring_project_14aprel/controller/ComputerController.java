@@ -1,44 +1,39 @@
 package az.developia.spring_project_14aprel.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import az.developia.spring_project_14aprel.entity.Computer;
+import az.developia.spring_project_14aprel.service.ComputerService;
 
 @RestController
 @RequestMapping("/computers")
 public class ComputerController {
 
-    private List<Computer> computers = new ArrayList<>();
-
-    public ComputerController() {
-        computers.add(new Computer(1, "Asus", "TUF"));
-        computers.add(new Computer(2, "HP", "Pavilion"));
-        computers.add(new Computer(3, "Dell", "Inspiron"));
-        computers.add(new Computer(4, "Asus", "ROG"));
-    }
+    @Autowired
+    private ComputerService service;
 
     @GetMapping
     public List<Computer> getAll() {
-        return computers;
+        return service.getAll();
     }
 
-    @GetMapping("/search")
-    public List<Computer> searchByBrand(@RequestParam String brand) {
+    @GetMapping("/{id}")
+    public Computer getById(@PathVariable Integer id) {
+        return service.getById(id);
+    }
 
-        List<Computer> result = new ArrayList<>();
+    @PostMapping
+    public String add(@RequestBody Computer computer) {
+        service.add(computer);
+        return "Computer elave edildi";
+    }
 
-        for (Computer c : computers) {
-            if (c.getBrand().equalsIgnoreCase(brand)) {
-                result.add(c);
-            }
-        }
-
-        return result;
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Integer id) {
+        service.delete(id);
+        return "Computer silindi";
     }
 }
