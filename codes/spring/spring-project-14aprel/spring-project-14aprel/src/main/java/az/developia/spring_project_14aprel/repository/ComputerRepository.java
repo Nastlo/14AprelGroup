@@ -91,6 +91,22 @@ public class ComputerRepository {
         }
     }
 
+    public void update(Computer computer) {
+
+        try {
+            Connection con = dataSource.getConnection();
+            Statement st = con.createStatement();
+
+            st.executeUpdate(
+                    "UPDATE computers SET brand='"+ computer.getBrand()+ "', model='"+ computer.getModel()+ "' WHERE id="+ computer.getId());
+
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void delete(Integer id) {
 
         try {

@@ -26,6 +26,15 @@ public class ComputerService {
         repository.add(computer);
     }
 
+    public void update(Computer computer) {
+
+        if (computer.getId() == null || computer.getId() <= 0) {
+            throw new IllegalArgumentException("ID boş, null və ya 0 ola bilməz!");
+        }
+
+        repository.update(computer);
+    }
+
     public void delete(Integer id) {
         repository.delete(id);
     }
