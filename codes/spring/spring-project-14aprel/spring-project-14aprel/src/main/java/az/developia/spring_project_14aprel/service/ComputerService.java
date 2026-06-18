@@ -6,24 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import az.developia.spring_project_14aprel.entity.Computer;
-import az.developia.spring_project_14aprel.repository.ComputerRepository;
+import az.developia.spring_project_14aprel.repository.ComputerRepo;
 
 @Service
 public class ComputerService {
 
     @Autowired
-    private ComputerRepository repository;
+    private ComputerRepo repository;
 
     public List<Computer> getAll() {
-        return repository.getAll();
+        return repository.findAll();
     }
 
     public Computer getById(Integer id) {
-        return repository.getById(id);
+        return repository.findById(id).orElse(null);
     }
 
     public void add(Computer computer) {
-        repository.add(computer);
+        repository.save(computer);
     }
 
     public void update(Computer computer) {
@@ -32,10 +32,10 @@ public class ComputerService {
             throw new IllegalArgumentException("ID boş, null və ya 0 ola bilməz!");
         }
 
-        repository.update(computer);
+        repository.save(computer);
     }
 
     public void delete(Integer id) {
-        repository.delete(id);
+        repository.deleteById(id);
     }
 }

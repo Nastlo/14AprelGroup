@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import az.developia.spring_project_14aprel.entity.Computer;
 import az.developia.spring_project_14aprel.service.ComputerService;
 
-@CrossOrigin(origins = "http://127.0.0.1:5500")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/computers")
 public class ComputerController {
