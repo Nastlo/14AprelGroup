@@ -1,20 +1,23 @@
 package az.developia.spring_project_14aprel.entity;
+import jakarta.persistence.*;
+import lombok.*;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
+@Entity
+@Table(name = "users")
 @Getter
 @Setter
-@ToString
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String name;
     private String surname;
-    private int age;
-
+    private String username;
+    private String password;
+    private String email;
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Car İdaresi</h1>
+
+<div class="form">
+    <input type="text" id="marka" placeholder="Marka">
+    <input type="text" id="model" placeholder="Model">
+    <input type="number" id="year" placeholder="İl">
+    <button onclick="addCar()">Maşın Elave Et</button>
+</div>
+
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th>Marka</th>
+            <th>Model</th>
+            <th>İl</th>
+            <th>Duzeltmeler</th>
+        </tr>
+    </thead>
+    <tbody id="carTable"></tbody>
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>

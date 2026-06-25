@@ -1,39 +1,30 @@
 package az.developia._AprelPraktika.entity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "cars")
 public class Car {
-	
-	private String marka;
-	private String model;
-	private Integer year;
-	
-	public Car(String marka, String model, Integer year) {
-        this.marka = marka;
-        this.model = model;
-        this.year = year;
-    }
-	
-    public String getMarka() {
-		return marka;
-	}
 
-	public void setMarka(String marka) {
-		this.marka = marka;
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String marka;
+    private String model;
+    private Integer year;
 
-	public String getModel() {
-		return model;
-	}
-
-	public void setModel(String model) {
-		this.model = model;
-	}
-
-	public Integer getYear() {
-		return year;
-	}
-
-	public void setYear(Integer year) {
-		this.year = year;
-	}
-    
 }

@@ -1,0 +1,59 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+.form {
+    margin: 20px;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #28a745;
+    color: white;
+    border: none;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+.action-btn {
+    margin: 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.delete {
+    background: red;
+    color: white;
+}
+
+.edit {
+    background: orange;
+    color: white;
+}

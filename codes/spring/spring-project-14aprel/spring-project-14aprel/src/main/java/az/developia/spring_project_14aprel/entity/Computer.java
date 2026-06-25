@@ -19,9 +19,12 @@ import lombok.ToString;
 @Entity
 @Table(name = "computers")
 public class Computer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String brand;
     private String model;
+    private Double price;
 }

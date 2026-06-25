@@ -12,30 +12,33 @@ import az.developia.spring_project_14aprel.repository.ComputerRepo;
 public class ComputerService {
 
     @Autowired
-    private ComputerRepo repository;
+    private ComputerRepo computerRepo;
 
     public List<Computer> getAll() {
-        return repository.findAll();
+        return computerRepo.findAll();
     }
 
     public Computer getById(Integer id) {
-        return repository.findById(id).orElse(null);
+        return computerRepo.findById(id).orElse(null);
     }
 
     public void add(Computer computer) {
-        repository.save(computer);
+        computerRepo.save(computer);
     }
 
     public void update(Computer computer) {
-
-        if (computer.getId() == null || computer.getId() <= 0) {
-            throw new IllegalArgumentException("ID boş, null və ya 0 ola bilməz!");
-        }
-
-        repository.save(computer);
+        computerRepo.save(computer);
     }
 
     public void delete(Integer id) {
-        repository.deleteById(id);
+        computerRepo.deleteById(id);
+    }
+
+    public List<Computer> findByBrand(String brand) {
+        return computerRepo.findByBrandContaining(brand);
+    }
+
+    public List<Computer> findByPriceRange(Double a, Double b) {
+        return computerRepo.findComputersByPriceRange(a, b);
     }
 }

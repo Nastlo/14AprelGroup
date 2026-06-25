@@ -43,4 +43,16 @@ public class ComputerController {
         service.delete(id);
         return "Computer silindi";
     }
+
+    @GetMapping("/search")
+    public List<Computer> searchByBrand(@RequestParam String brand) {
+        return service.findByBrand(brand);
+    }
+
+    @GetMapping("/price")
+    public List<Computer> searchByPrice(
+            @RequestParam(name = "minPrice") Double a,
+            @RequestParam(name = "maxPrice") Double b) {
+        return service.findByPriceRange(a, b);
+    }
 }

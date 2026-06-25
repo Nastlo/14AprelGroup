@@ -1,0 +1,91 @@
+2026-06-22 17:29:21.330 INFO  a.d.s.SpringProject14aprelApplication - Starting SpringProject14aprelApplication using Java 21.0.9 with PID 8548 (C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel\target\classes started by -Nastlo in C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel)
+2026-06-22 17:29:21.333 DEBUG a.d.s.SpringProject14aprelApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22 17:29:21.333 INFO  a.d.s.SpringProject14aprelApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-22 17:29:21.739 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22 17:29:21.779 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2026-06-22 17:29:22.091 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-22 17:29:22.105 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-22 17:29:22.107 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-22 17:29:22.107 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-22 17:29:22.151 INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 782 ms
+2026-06-22 17:29:22.284 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-22 17:29:22.543 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d237460
+2026-06-22 17:29:22.544 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-22 17:29:22.567 INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-22 17:29:22.603 INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-22 17:29:22.949 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22 17:29:23.012 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3307/spring_app]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: spring_app/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22 17:29:23.450 INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22 17:29:23.454 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22 17:29:23.504 INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-22 17:29:23.687 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22 17:29:23.908 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-22 17:29:23.928 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-22 17:29:23.934 INFO  a.d.s.SpringProject14aprelApplication - Started SpringProject14aprelApplication in 2.989 seconds (process running for 3.242)
+2026-06-22 17:29:26.275 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-22 17:29:26.275 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-22 17:29:26.277 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-06-22 19:16:35.218 INFO  a.d.s.SpringProject14aprelApplication - Starting SpringProject14aprelApplication using Java 21.0.9 with PID 27432 (C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel\target\classes started by -Nastlo in C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel)
+2026-06-22 19:16:35.223 DEBUG a.d.s.SpringProject14aprelApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22 19:16:35.224 INFO  a.d.s.SpringProject14aprelApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-22 19:16:35.754 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22 19:16:35.831 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 2 JPA repository interfaces.
+2026-06-22 19:16:36.347 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-22 19:16:36.359 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-22 19:16:36.361 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-22 19:16:36.362 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-22 19:16:36.409 INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1148 ms
+2026-06-22 19:16:36.593 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-22 19:16:36.869 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f4d32bf
+2026-06-22 19:16:36.872 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-22 19:16:36.913 INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-22 19:16:36.975 INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
+2026-06-22 19:16:37.642 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-22 19:16:37.800 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3307/spring_app]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.44
+	Default catalog/schema: spring_app/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-06-22 19:16:39.011 INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-06-22 19:16:39.024 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-22 19:16:39.162 INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-22 19:16:39.537 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-22 19:16:39.959 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-06-22 19:16:39.980 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-06-22 19:16:39.986 INFO  a.d.s.SpringProject14aprelApplication - Started SpringProject14aprelApplication in 5.185 seconds (process running for 5.526)
+2026-06-22 19:16:45.082 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-22 19:16:45.082 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-22 19:16:45.084 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-06-22 20:47:29.504 INFO  a.d.s.SpringProject14aprelApplication - Starting SpringProject14aprelApplication using Java 21.0.9 with PID 24364 (C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel\target\classes started by -Nastlo in C:\GitHub\14AprelGroup\codes\spring\spring-project-14aprel\spring-project-14aprel)
+2026-06-22 20:47:29.509 DEBUG a.d.s.SpringProject14aprelApplication - Running with Spring Boot v4.0.6, Spring v7.0.7
+2026-06-22 20:47:29.510 INFO  a.d.s.SpringProject14aprelApplication - No active profile set, falling back to 1 default profile: "default"
+2026-06-22 20:47:30.009 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-22 20:47:30.058 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
+2026-06-22 20:47:30.451 INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-06-22 20:47:30.470 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-06-22 20:47:30.472 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-06-22 20:47:30.472 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-06-22 20:47:30.515 INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 969 ms
+2026-06-22 20:47:30.675 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-22 20:47:30.931 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ce26986
+2026-06-22 20:47:30.932 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-22 20:47:30.962 INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-06-22 20:47:31.015 INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.2.12.Final
