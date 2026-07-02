@@ -1,12 +1,10 @@
 package az.developia.spring_project_14aprel.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import az.developia.spring_project_14aprel.entity.Computer;
 import az.developia.spring_project_14aprel.requestdto.ComputerRequestDto;
 import az.developia.spring_project_14aprel.responsedto.ComputerResponseDto;
 import az.developia.spring_project_14aprel.service.ComputerService;
@@ -21,59 +19,23 @@ public class ComputerController {
 
     @GetMapping
     public List<ComputerResponseDto> getAll() {
-
-        List<Computer> computers = service.getAll();
-        List<ComputerResponseDto> response = new ArrayList<>();
-
-        for (Computer c : computers) {
-            response.add(
-                    new ComputerResponseDto(
-                            c.getId(),
-                            c.getBrand(),
-                            c.getModel()));
-        }
-
-        return response;
+        return service.getAll();
     }
 
     @GetMapping("/{id}")
     public ComputerResponseDto getById(@PathVariable Integer id) {
-
-        Computer c = service.getById(id);
-
-        return new ComputerResponseDto(
-                c.getId(),
-                c.getBrand(),
-                c.getModel());
+        return service.getById(id);
     }
 
     @PostMapping
     public String add(@RequestBody ComputerRequestDto dto) {
-
-        Computer computer = new Computer();
-
-        computer.setId(dto.getId());
-        computer.setBrand(dto.getBrand());
-        computer.setModel(dto.getModel());
-        computer.setPrice(dto.getPrice());
-
-        service.add(computer);
-
+        service.add(dto);
         return "Computer elave edildi";
     }
 
     @PutMapping
     public String update(@RequestBody ComputerRequestDto dto) {
-
-        Computer computer = new Computer();
-
-        computer.setId(dto.getId());
-        computer.setBrand(dto.getBrand());
-        computer.setModel(dto.getModel());
-        computer.setPrice(dto.getPrice());
-
-        service.update(computer);
-
+        service.update(dto);
         return "Computer yenilendi";
     }
 
@@ -81,17 +43,5 @@ public class ComputerController {
     public String delete(@PathVariable Integer id) {
         service.delete(id);
         return "Computer silindi";
-    }
-
-    @GetMapping("/search")
-    public List<Computer> searchByBrand(@RequestParam String brand) {
-        return service.findByBrand(brand);
-    }
-
-    @GetMapping("/price")
-    public List<Computer> searchByPrice(
-            @RequestParam(name = "minPrice") Double a,
-            @RequestParam(name = "maxPrice") Double b) {
-        return service.findByPriceRange(a, b);
     }
 }
