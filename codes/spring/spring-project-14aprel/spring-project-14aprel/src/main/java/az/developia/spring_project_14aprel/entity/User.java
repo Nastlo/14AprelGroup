@@ -1,4 +1,7 @@
 package az.developia.spring_project_14aprel.entity;
+
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -8,16 +11,22 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString(exclude = {"computers", "orders"})
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
-    private String surname;
+    private String firstName;
+    private String lastName;
     private String username;
     private String password;
     private String email;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Computer> computers;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Order> orders;
 }

@@ -3,8 +3,10 @@ package az.developia.spring_project_14aprel.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+import az.developia.spring_project_14aprel.entity.Computer;
 import az.developia.spring_project_14aprel.requestdto.ComputerRequestDto;
 import az.developia.spring_project_14aprel.responsedto.ComputerResponseDto;
 import az.developia.spring_project_14aprel.service.ComputerService;
@@ -43,5 +45,13 @@ public class ComputerController {
     public String delete(@PathVariable Integer id) {
         service.delete(id);
         return "Computer silindi";
+    }
+
+    @GetMapping("/page")
+    public Page<ComputerResponseDto> pagination(
+            @RequestParam int page,
+            @RequestParam int size) {
+
+        return service.getPagination(page, size);
     }
 }

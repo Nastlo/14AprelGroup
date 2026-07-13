@@ -2,6 +2,8 @@ package az.developia.spring_project_14aprel.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -20,4 +22,6 @@ public interface ComputerRepo extends JpaRepository<Computer, Integer> {
     List<Computer> findComputersByPriceRange(
             @Param("a") Double a,
             @Param("b") Double b);
+
+    Page<Computer> findAll(Pageable pageable);
 }

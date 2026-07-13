@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import az.developia.spring_project_14aprel.entity.Computer;
@@ -22,7 +25,6 @@ public class ComputerService {
     private ModelMapper modelMapper;
 
     public List<ComputerResponseDto> getAll() {
-
         return computerRepo.findAll()
                 .stream()
                 .map(computer -> modelMapper.map(computer, ComputerResponseDto.class))
@@ -31,12 +33,14 @@ public class ComputerService {
 
     public ComputerResponseDto getById(Integer id) {
         Computer computer = computerRepo.findById(id).orElse(null);
+
         if (computer == null) {
             return null;
         }
+
         return modelMapper.map(computer, ComputerResponseDto.class);
     }
-    
+
     public void add(ComputerRequestDto dto) {
         Computer computer = modelMapper.map(dto, Computer.class);
         computerRepo.save(computer);
@@ -57,5 +61,13 @@ public class ComputerService {
 
     public List<Computer> findByPriceRange(Double a, Double b) {
         return computerRepo.findComputersByPriceRange(a, b);
+    }
+
+    public Page<ComputerResponseDto> getPagination(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+
+        Page<Computer> result = computerRepo.findAll(pageable);
+
+        return result.map(computer -> modelMapper.map(computer, ComputerResponseDto.class));
     }
 }
