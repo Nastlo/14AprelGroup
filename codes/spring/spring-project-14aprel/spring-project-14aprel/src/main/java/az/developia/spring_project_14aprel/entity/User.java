@@ -2,7 +2,9 @@ package az.developia.spring_project_14aprel.entity;
 
 import java.util.List;
 
+import az.developia.spring_project_14aprel.validation.UniqueEmail;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.*;
 
 @Entity
@@ -19,9 +21,15 @@ public class User {
     private Integer id;
 
     private String firstName;
+
     private String lastName;
+
     private String username;
+
     private String password;
+
+    @Email
+    @UniqueEmail
     private String email;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
