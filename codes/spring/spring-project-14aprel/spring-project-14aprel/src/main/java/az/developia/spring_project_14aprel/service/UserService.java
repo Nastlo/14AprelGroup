@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import az.developia.spring_project_14aprel.entity.Order;
 import az.developia.spring_project_14aprel.entity.User;
+import az.developia.spring_project_14aprel.exception.ResourcesNotFoundException;
 import az.developia.spring_project_14aprel.repository.UserRepository;
 
 @Service
@@ -70,9 +71,6 @@ public class UserService {
         userRepository.save(user);
 
         System.out.println("İstifadəçi və 3 sifariş əlavə edildi.");
-
-        // userRepository.delete(user);
-
         System.out.println("İstifadəçi silindi.");
         System.out.println("Cascade sayəsində sifarişlər də silindi.");
     }
@@ -87,5 +85,11 @@ public class UserService {
     public User findByEmailJPQL(String email) {
         System.out.println("MySQL-dən oxundu (findByEmail)");
         return userRepository.findByEmailJPQL(email);
+    }
+
+    public User findById(Integer id) {
+        return userRepository.findById(id)
+                .orElseThrow(() ->
+                        new ResourcesNotFoundException("İstifadəçi tapılmadı. ID = " + id));
     }
 }
