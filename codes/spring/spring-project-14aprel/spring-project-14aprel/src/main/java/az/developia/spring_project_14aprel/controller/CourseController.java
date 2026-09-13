@@ -6,9 +6,11 @@ import az.developia.spring_project_14aprel.requestdto.CourseUpdateRequest;
 import az.developia.spring_project_14aprel.responsedto.ApiResponse;
 import az.developia.spring_project_14aprel.responsedto.CourseResponse;
 import az.developia.spring_project_14aprel.service.CourseService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/courses")
+@Tag(name = "Courses", description = "Course idarəetmə əməliyyatları")
 public class CourseController {
 
     private final CourseService courseService;
@@ -25,6 +28,7 @@ public class CourseController {
     }
 
     @PostMapping
+    @Operation(summary = "Yeni course yaradır")
     public ResponseEntity<ApiResponse<CourseResponse>> create(
             @Valid @RequestBody CourseCreateRequest request) {
 
@@ -34,6 +38,7 @@ public class CourseController {
     }
 
     @GetMapping
+    @Operation(summary = "Bütün course-ları gətirir")
     public ResponseEntity<ApiResponse<List<CourseResponse>>> findAll(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
@@ -45,7 +50,9 @@ public class CourseController {
     }
 
     @GetMapping("/{id}")
+    @Operation(summary = "ID-yə görə course gətirir")
     public ResponseEntity<ApiResponse<CourseResponse>> findById(
+            @Parameter(description = "Course ID-si")
             @PathVariable Long id) {
 
         return ResponseEntity.ok(
@@ -54,6 +61,7 @@ public class CourseController {
     }
 
     @PutMapping
+    @Operation(summary = "Course məlumatlarını yeniləyir")
     public ResponseEntity<ApiResponse<CourseResponse>> update(
             @Valid @RequestBody CourseUpdateRequest request) {
 
@@ -63,7 +71,9 @@ public class CourseController {
     }
 
     @DeleteMapping("/{id}")
+    @Operation(summary = "Course-u silir")
     public ResponseEntity<ApiResponse<Void>> delete(
+            @Parameter(description = "Silinəcək course-un ID-si")
             @PathVariable Long id) {
 
         courseService.delete(id);
@@ -73,6 +83,7 @@ public class CourseController {
     }
 
     @GetMapping("/search")
+    @Operation(summary = "Course axtarışı edir")
     public ResponseEntity<ApiResponse<List<CourseResponse>>> search(
             @RequestParam String name) {
 
@@ -82,7 +93,9 @@ public class CourseController {
     }
 
     @GetMapping("/{id}/students")
+    @Operation(summary = "Course-a qeydiyyatda olan student-ləri gətirir")
     public ResponseEntity<ApiResponse<List<Student>>> getStudents(
+            @Parameter(description = "Course ID-si")
             @PathVariable Long id) {
 
         return ResponseEntity.ok(
