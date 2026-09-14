@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import az.developia.spring_project_14aprel.entity.Order;
@@ -19,6 +20,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @CacheEvict(value = {"users", "countAllUsers", "countUsersJPQL"}, allEntries = true)
     public String register(User user) {
 
@@ -27,6 +31,8 @@ public class UserService {
         if (existingUser != null) {
             return "Bu username artıq mövcuddur!";
         }
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
 
         userRepository.save(user);
 

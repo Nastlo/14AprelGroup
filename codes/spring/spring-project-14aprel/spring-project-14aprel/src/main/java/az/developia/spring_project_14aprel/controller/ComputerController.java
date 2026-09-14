@@ -40,7 +40,7 @@ public class ComputerController {
     @PostMapping
     @Operation(summary = "Yeni computer əlavə edir")
     public String add(@RequestBody ComputerRequestDto dto) {
-        service.add(dto);
+        service.add(dto);	
         return "Computer elave edildi";
     }
 
