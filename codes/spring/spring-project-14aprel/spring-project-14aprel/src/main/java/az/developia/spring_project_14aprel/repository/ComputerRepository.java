@@ -29,14 +29,15 @@ public class ComputerRepository {
 
             ResultSet rs = st.executeQuery("SELECT * FROM computers");
 
-            while (rs.next()) {
-                Computer computer = new Computer(
-                        rs.getInt("id"),
-                        rs.getString("brand"),
-                        rs.getString("model"));
-
-                computers.add(computer);
-            }
+//            while (rs.next()) {
+//                Computer computer = new Computer(
+//                        rs.getInt("id"),
+//                        rs.getString("brand"),
+//                        rs.getString("model"))
+//                		rs.getString("price"));
+//
+//                computers.add(computer);
+//            }
 
             con.close();
 
@@ -56,15 +57,15 @@ public class ComputerRepository {
             ResultSet rs = st.executeQuery(
                     "SELECT * FROM computers WHERE id=" + id);
 
-            if (rs.next()) {
-                Computer computer = new Computer(
-                        rs.getInt("id"),
-                        rs.getString("brand"),
-                        rs.getString("model"));
-
-                con.close();
-                return computer;
-            }
+//            if (rs.next()) {
+//                Computer computer = new Computer(
+//                        rs.getInt("id"),
+//                        rs.getString("brand"),
+//                        rs.getString("model"));
+//
+//                con.close();
+//                return computer;
+//            }
 
             con.close();
 

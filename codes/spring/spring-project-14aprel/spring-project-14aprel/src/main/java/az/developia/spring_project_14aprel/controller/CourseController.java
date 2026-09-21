@@ -1,6 +1,7 @@
 package az.developia.spring_project_14aprel.controller;
 
 import az.developia.spring_project_14aprel.entity.Student;
+import az.developia.spring_project_14aprel.exception.CourseNotFoundException;
 import az.developia.spring_project_14aprel.requestdto.CourseCreateRequest;
 import az.developia.spring_project_14aprel.requestdto.CourseUpdateRequest;
 import az.developia.spring_project_14aprel.responsedto.ApiResponse;
@@ -53,7 +54,7 @@ public class CourseController {
     @Operation(summary = "ID-yə görə course gətirir")
     public ResponseEntity<ApiResponse<CourseResponse>> findById(
             @Parameter(description = "Course ID-si")
-            @PathVariable Long id) {
+            @PathVariable Long id) throws CourseNotFoundException {
 
         return ResponseEntity.ok(
                 new ApiResponse<>(true, "Course tapıldı",
@@ -63,7 +64,7 @@ public class CourseController {
     @PutMapping
     @Operation(summary = "Course məlumatlarını yeniləyir")
     public ResponseEntity<ApiResponse<CourseResponse>> update(
-            @Valid @RequestBody CourseUpdateRequest request) {
+            @Valid @RequestBody CourseUpdateRequest request) throws CourseNotFoundException {
 
         return ResponseEntity.ok(
                 new ApiResponse<>(true, "Course yeniləndi",
@@ -74,7 +75,7 @@ public class CourseController {
     @Operation(summary = "Course-u silir")
     public ResponseEntity<ApiResponse<Void>> delete(
             @Parameter(description = "Silinəcək course-un ID-si")
-            @PathVariable Long id) {
+            @PathVariable Long id) throws CourseNotFoundException {
 
         courseService.delete(id);
 
@@ -96,7 +97,7 @@ public class CourseController {
     @Operation(summary = "Course-a qeydiyyatda olan student-ləri gətirir")
     public ResponseEntity<ApiResponse<List<Student>>> getStudents(
             @Parameter(description = "Course ID-si")
-            @PathVariable Long id) {
+            @PathVariable Long id) throws CourseNotFoundException {
 
         return ResponseEntity.ok(
                 new ApiResponse<>(true, "Course tələbələri",

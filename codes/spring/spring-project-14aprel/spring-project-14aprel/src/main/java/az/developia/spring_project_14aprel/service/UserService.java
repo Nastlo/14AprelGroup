@@ -33,6 +33,7 @@ public class UserService {
         }
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setAuthority("USER");
 
         userRepository.save(user);
 

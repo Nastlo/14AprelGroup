@@ -1,6 +1,8 @@
 package az.developia.spring_project_14aprel.controller;
 
 import az.developia.spring_project_14aprel.entity.Course;
+import az.developia.spring_project_14aprel.exception.CourseNotFoundException;
+import az.developia.spring_project_14aprel.exception.StudentNotFoundException;
 import az.developia.spring_project_14aprel.requestdto.StudentCreateRequest;
 import az.developia.spring_project_14aprel.requestdto.StudentUpdateRequest;
 import az.developia.spring_project_14aprel.responsedto.ApiResponse;
@@ -53,7 +55,7 @@ public class StudentController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse<StudentResponse>> findById(
-            @PathVariable Long id) {
+            @PathVariable Long id) throws StudentNotFoundException {
 
         return ResponseEntity.ok(
                 new ApiResponse<>(true, "Student tapıldı",
@@ -62,7 +64,7 @@ public class StudentController {
 
     @PutMapping
     public ResponseEntity<ApiResponse<StudentResponse>> update(
-            @Valid @RequestBody StudentUpdateRequest request) {
+            @Valid @RequestBody StudentUpdateRequest request) throws StudentNotFoundException {
 
         return ResponseEntity.ok(
                 new ApiResponse<>(true, "Student yeniləndi",
@@ -71,7 +73,7 @@ public class StudentController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<Void>> delete(
-            @PathVariable Long id) {
+            @PathVariable Long id) throws StudentNotFoundException {
 
         studentService.delete(id);
 
@@ -91,7 +93,7 @@ public class StudentController {
     @PostMapping("/{id}/upload-photo")
     public ResponseEntity<ApiResponse<Void>> uploadPhoto(
             @PathVariable Long id,
-            @RequestParam("file") MultipartFile file) {
+            @RequestParam("file") MultipartFile file) throws StudentNotFoundException {
 
         studentService.uploadPhoto(id, file);
 
@@ -101,7 +103,7 @@ public class StudentController {
 
     @GetMapping("/{id}/photo")
     public ResponseEntity<ByteArrayResource> downloadPhoto(
-            @PathVariable Long id) {
+            @PathVariable Long id) throws StudentNotFoundException {
 
         byte[] photo = studentService.downloadPhoto(id);
 
@@ -116,7 +118,7 @@ public class StudentController {
 
     @DeleteMapping("/{id}/photo")
     public ResponseEntity<ApiResponse<Void>> deletePhoto(
-            @PathVariable Long id) {
+            @PathVariable Long id) throws StudentNotFoundException {
 
         studentService.deletePhoto(id);
 
@@ -127,7 +129,7 @@ public class StudentController {
     @PostMapping("/{studentId}/courses/{courseId}")
     public ResponseEntity<ApiResponse<Void>> assignCourse(
             @PathVariable Long studentId,
-            @PathVariable Long courseId) {
+            @PathVariable Long courseId) throws StudentNotFoundException, CourseNotFoundException {
 
         studentService.assignCourse(studentId, courseId);
 
@@ -138,7 +140,7 @@ public class StudentController {
     @DeleteMapping("/{studentId}/courses/{courseId}")
     public ResponseEntity<ApiResponse<Void>> removeCourse(
             @PathVariable Long studentId,
-            @PathVariable Long courseId) {
+            @PathVariable Long courseId) throws StudentNotFoundException, CourseNotFoundException {
 
         studentService.removeCourse(studentId, courseId);
 
@@ -148,7 +150,7 @@ public class StudentController {
 
     @GetMapping("/{studentId}/courses")
     public ResponseEntity<ApiResponse<List<Course>>> getCourses(
-            @PathVariable Long studentId) {
+            @PathVariable Long studentId) throws StudentNotFoundException {
 
         return ResponseEntity.ok(
                 new ApiResponse<>(true, "Student kursları",

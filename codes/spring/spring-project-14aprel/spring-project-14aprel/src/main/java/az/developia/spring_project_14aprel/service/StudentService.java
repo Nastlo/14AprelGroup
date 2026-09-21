@@ -51,7 +51,7 @@ public class StudentService {
                 .map(studentMapper::toResponse);
     }
 
-    public StudentResponse findById(Long id) {
+    public StudentResponse findById(Long id) throws StudentNotFoundException {
 
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -60,7 +60,7 @@ public class StudentService {
         return studentMapper.toResponse(student);
     }
 
-    public StudentResponse update(StudentUpdateRequest request) {
+    public StudentResponse update(StudentUpdateRequest request) throws StudentNotFoundException {
 
         Student student = studentRepository.findById(request.getId())
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -79,7 +79,7 @@ public class StudentService {
         return studentMapper.toResponse(studentRepository.save(student));
     }
 
-    public void delete(Long id) {
+    public void delete(Long id) throws StudentNotFoundException {
 
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -96,7 +96,7 @@ public class StudentService {
                 .toList();
     }
 
-    public void assignCourse(Long studentId, Long courseId) {
+    public void assignCourse(Long studentId, Long courseId) throws StudentNotFoundException, CourseNotFoundException {
 
         Student student = studentRepository.findById(studentId)
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -117,7 +117,7 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    public void removeCourse(Long studentId, Long courseId) {
+    public void removeCourse(Long studentId, Long courseId) throws StudentNotFoundException, CourseNotFoundException {
 
         Student student = studentRepository.findById(studentId)
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -134,7 +134,7 @@ public class StudentService {
         studentRepository.save(student);
     }
 
-    public List<Course> getCourses(Long studentId) {
+    public List<Course> getCourses(Long studentId) throws StudentNotFoundException {
 
         Student student = studentRepository.findById(studentId)
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -143,7 +143,7 @@ public class StudentService {
         return student.getCourses();
     }
 
-    public void uploadPhoto(Long id, MultipartFile file) {
+    public void uploadPhoto(Long id, MultipartFile file) throws StudentNotFoundException {
 
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -157,7 +157,7 @@ public class StudentService {
         }
     }
 
-    public byte[] downloadPhoto(Long id) {
+    public byte[] downloadPhoto(Long id) throws StudentNotFoundException {
 
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(
@@ -170,7 +170,7 @@ public class StudentService {
         return student.getProfilePhoto();
     }
 
-    public void deletePhoto(Long id) {
+    public void deletePhoto(Long id) throws StudentNotFoundException {
 
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new StudentNotFoundException(

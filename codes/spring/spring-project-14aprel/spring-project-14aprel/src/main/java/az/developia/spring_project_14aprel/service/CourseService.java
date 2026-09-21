@@ -46,7 +46,7 @@ public class CourseService {
                 .map(courseMapper::toResponse);
     }
 
-    public CourseResponse findById(Long id) {
+    public CourseResponse findById(Long id) throws CourseNotFoundException {
 
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new CourseNotFoundException(
@@ -55,7 +55,7 @@ public class CourseService {
         return courseMapper.toResponse(course);
     }
 
-    public CourseResponse update(CourseUpdateRequest request) {
+    public CourseResponse update(CourseUpdateRequest request) throws CourseNotFoundException {
 
         Course course = courseRepository.findById(request.getId())
                 .orElseThrow(() -> new CourseNotFoundException(
@@ -74,7 +74,7 @@ public class CourseService {
         return courseMapper.toResponse(courseRepository.save(course));
     }
 
-    public void delete(Long id) {
+    public void delete(Long id) throws CourseNotFoundException {
 
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new CourseNotFoundException(
@@ -91,7 +91,7 @@ public class CourseService {
                 .toList();
     }
 
-    public List<Student> getStudents(Long id) {
+    public List<Student> getStudents(Long id) throws CourseNotFoundException {
 
         Course course = courseRepository.findById(id)
                 .orElseThrow(() -> new CourseNotFoundException(
