@@ -1,4 +1,4 @@
-2026-09-21 20:40:21.045 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+2026-09-21 20:33:15.889 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
 java.lang.IllegalArgumentException: A granted authority textual representation is required
 	at org.springframework.util.Assert.hasText(Assert.java:254)
 	at org.springframework.security.core.authority.SimpleGrantedAuthority.<init>(SimpleGrantedAuthority.java:44)
@@ -56,7 +56,7 @@ java.lang.IllegalArgumentException: A granted authority textual representation i
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2026-09-21 20:40:22.070 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+2026-09-21 20:35:19.632 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
 java.lang.IllegalArgumentException: A granted authority textual representation is required
 	at org.springframework.util.Assert.hasText(Assert.java:254)
 	at org.springframework.security.core.authority.SimpleGrantedAuthority.<init>(SimpleGrantedAuthority.java:44)
