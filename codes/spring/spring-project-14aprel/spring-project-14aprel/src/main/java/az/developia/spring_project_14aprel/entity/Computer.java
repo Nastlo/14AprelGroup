@@ -20,6 +20,8 @@ public class Computer {
     private String model;
     private Double price;
 
+    private Integer userId; // Computer-i yaradan istifadəçinin User ID-si
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;

@@ -8,10 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import az.developia.spring_project_14aprel.entity.Computer;
+import az.developia.spring_project_14aprel.entity.User;
+import az.developia.spring_project_14aprel.exception.ResourcesNotFoundException;
 import az.developia.spring_project_14aprel.repository.ComputerRepo;
+import az.developia.spring_project_14aprel.repository.UserRepository;
 import az.developia.spring_project_14aprel.requestdto.ComputerRequestDto;
 import az.developia.spring_project_14aprel.responsedto.ComputerResponseDto;
 
@@ -23,6 +27,9 @@ public class ComputerService {
 
     @Autowired
     private ModelMapper modelMapper;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public List<ComputerResponseDto> getAll() {
         return computerRepo.findAll()
@@ -42,7 +49,26 @@ public class ComputerService {
     }
 
     public void add(ComputerRequestDto dto) {
+
         Computer computer = modelMapper.map(dto, Computer.class);
+
+        String username = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+
+        User user = userRepository.findByUsername(username);
+
+        if (user == null) {
+            throw new ResourcesNotFoundException(
+                    "İstifadəçi tapılmadı. Username = " + username
+            );
+        }
+
+        computer.setUserId(user.getId());
+
+        computer.setUser(user);
+
         computerRepo.save(computer);
     }
 
