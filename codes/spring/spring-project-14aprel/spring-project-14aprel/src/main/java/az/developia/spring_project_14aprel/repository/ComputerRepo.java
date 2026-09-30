@@ -22,6 +22,4 @@ public interface ComputerRepo extends JpaRepository<Computer, Integer> {
     List<Computer> findComputersByPriceRange(
             @Param("a") Double a,
             @Param("b") Double b);
-
-    Page<Computer> findAll(Pageable pageable);
 }
