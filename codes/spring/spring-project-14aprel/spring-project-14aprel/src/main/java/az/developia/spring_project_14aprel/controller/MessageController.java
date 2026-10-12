@@ -1,0 +1,24 @@
+
+package az.developia.spring_project_14aprel.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import az.developia.spring_project_14aprel.service.MessageProducer;
+
+@RestController
+public class MessageController {
+
+    private final MessageProducer messageProducer;
+
+    public MessageController(MessageProducer messageProducer) {
+        this.messageProducer = messageProducer;
+    }
+
+    @GetMapping("/rabbitmq/send")
+    public String sendMessage(@RequestParam String message) {
+        messageProducer.sendMessage(message);
+        return "Mesaj RabbitMQ gönderildi: " + message;
+    }
+}

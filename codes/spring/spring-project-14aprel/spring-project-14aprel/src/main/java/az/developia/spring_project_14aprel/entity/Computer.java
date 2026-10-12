@@ -1,3 +1,4 @@
+
 package az.developia.spring_project_14aprel.entity;
 
 import jakarta.persistence.*;
@@ -20,7 +21,8 @@ public class Computer {
     private String model;
     private Double price;
 
-    private Integer userId; // Computer-i yaradan istifadəçinin User ID-si
+    @Column(name = "user_id", insertable = false, updatable = false)
+    private Integer userId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")

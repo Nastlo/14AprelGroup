@@ -36,7 +36,8 @@ public class SecurityConfig {
                     "/users/register",
                     "/auth/login",
                     "/swagger-ui/**",
-                    "/v3/api-docs/**"
+                    "/v3/api-docs/**",
+                    "/rabbitmq/send"
                 ).permitAll()
 
                 .requestMatchers("/users/**")
