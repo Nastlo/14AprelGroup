@@ -5,7 +5,7 @@ import java.util.Optional;
 public class Main {
     public static void main(String[] args) {
 
-        String product = "Car";
+        String product = "Laptop";
         Optional.ofNullable(product)
                 .ifPresentOrElse(
                         System.out::println,
