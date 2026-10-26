@@ -10,10 +10,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class UserWithComputersResponse {
 
     private User user;
-    private List<Object> computers;
+    private List<ComputerResponse> computers;
 }
