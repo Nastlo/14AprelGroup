@@ -1,4 +1,3 @@
-
 package az.developia.userservice.service;
 
 import java.util.List;
@@ -15,6 +14,9 @@ import az.developia.userservice.response.ComputerResponse;
 import az.developia.userservice.response.UserWithComputersResponse;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.micrometer.observation.Observation;
+import io.micrometer.observation.ObservationRegistry;
+
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -24,9 +26,14 @@ public class UserService {
     private final UserRepository userRepository;
     private final RestTemplate restTemplate;
     private final RabbitTemplate rabbitTemplate;
+    private final ObservationRegistry observationRegistry;
 
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+
+        return Observation.createNotStarted(
+                "user.getAllUsers",
+                observationRegistry
+        ).observe(() -> userRepository.findAll());
     }
 
     public User createUser(User user) {
